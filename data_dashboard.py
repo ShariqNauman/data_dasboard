@@ -27,5 +27,9 @@ if upload_file is not None:
     x_axis = st.selectbox("Select the x-axis column", columns)
     columns.remove(x_axis)
     y_axis = st.selectbox("Select the y-axis column", columns)
+    plot_type = st.selectbox("Select the plot type", ["Bar", "Line"])
     if st.button("Generate Plot"):
-        st.line_chart(filtered_df.set_index(x_axis)[y_axis])
+        if plot_type == "Line":
+            st.line_chart(filtered_df.set_index(x_axis)[y_axis])
+        else:
+            st.bar_chart(filtered_df.set_index(x_axis)[y_axis]
