@@ -25,6 +25,7 @@ if upload_file is not None:
 
     st.subheader("Plot Data")
     x_axis = st.selectbox("Select the x-axis column", columns)
+    columns.remove(x_axis)
     y_axis = st.selectbox("Select the y-axis column", columns)
     if st.button("Generate Plot"):
         st.line_chart(filtered_df.set_index(x_axis)[y_axis])
