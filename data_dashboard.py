@@ -32,4 +32,4 @@ if upload_file is not None:
         if plot_type == "Line":
             st.line_chart(filtered_df.set_index(x_axis)[y_axis])
         else:
-            st.bar_chart(filtered_df.set_index(x_axis)[y_axis]
+            st.bar_chart(filtered_df.set_index(x_axis)[y_axis])
